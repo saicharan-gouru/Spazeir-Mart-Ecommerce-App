@@ -2,12 +2,12 @@ import { Route,Routes } from "react-router-dom";
 import "./App.css";
 import logo from "./logo.png";
 import Mockman from "mockman-js";
+import {NavBar} from "./index"
 
 function App() {
   return (
     <div className="App">
-      <h1>Spazeir Mart</h1>
-
+      <NavBar />
       <Routes>
         <Route path="mock" element={<Mockman/>}/>
       </Routes>
