@@ -13,7 +13,6 @@ function DataProvider({children}){
         async function  FetchData(){
             try{
             const response = await axios.get("/api/categories");
-            console.log(response);
             setCategoriesData(response.data.categories);
             }
             catch(error){
@@ -22,7 +21,7 @@ function DataProvider({children}){
         }
         FetchData();
     }
-    ,[]);
+    );
 
 
     return(
