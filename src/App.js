@@ -2,7 +2,7 @@ import { Route,Routes } from "react-router-dom";
 import "./App.css";
 import logo from "./logo.png";
 import Mockman from "mockman-js";
-import {NavBar} from "./index"
+import {NavBar,Homepage,Footer} from "./index"
 
 function App() {
   return (
@@ -10,7 +10,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="mock" element={<Mockman/>}/>
+        <Route path="/" element={<Homepage/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
