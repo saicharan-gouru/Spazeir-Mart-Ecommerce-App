@@ -14,7 +14,7 @@ function Categories(){
             {
                 categoriesData.map(item => 
                 <Link to="/products" className="category-card">
-                    <img className="category-image" src={item.link} />
+                    <img className="category-image" src={item.link} alt="category"/>
                     <p className="category-name">{item.categoryName}</p>
                 </Link>
                 )
