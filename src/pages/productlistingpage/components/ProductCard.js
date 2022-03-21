@@ -6,7 +6,7 @@ function ProductCard({product}){
     return(
         <div class="product-card">
             <div class="product-card-header">
-                <img class="hero-img " src={imageLink} />
+                <img class="hero-img " src={imageLink} alt="product" />
                 <div class="content ">
                     <h2 class="hero-heading ">{title}</h2>
                     <h4 class="price">{price} Rupees</h4>
