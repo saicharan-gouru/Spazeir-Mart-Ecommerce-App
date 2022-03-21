@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-
+import axios from "axios";
 
 const DataContext = createContext();
 
@@ -8,7 +8,6 @@ function DataProvider({children}){
     const [categoriesData,setCategoriesData] = useState([]);
     const [productsData,setProductsData] = useState([]);
 
-    const axios = require('axios');
 
     useEffect(()=>{ 
         async function FetchData(){
@@ -23,7 +22,7 @@ function DataProvider({children}){
             }
         }
         FetchData();
-    }
+    },[]
     );
 
 
