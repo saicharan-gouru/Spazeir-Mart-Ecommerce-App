@@ -1,0 +1,71 @@
+:root {
+    --white: white;
+    --black: black;
+    --hover-color: rgb(247, 242, 242);
+    --grey: grey;
+    --gainsboro: gainsboro;
+    --primary-blue: #2563EB;
+    --gold: #fdc434;
+}
+
+.product-card {
+    width: 15rem;
+    margin: auto;
+    background-color: var(--white);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border: 2px solid var(--black);
+    padding: 1rem;
+}
+
+.product-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.product-card-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.hero-heading {
+    text-align: center;
+}
+
+.hero-img {
+    width: 5 rem;
+    height: 10rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 0.5rem;
+}
+
+.btn-add-to-cart,
+.btn-buy-now {
+    border-radius: 0.5rem;
+    border: 1px solid;
+    padding: 0.5rem;
+    background-color: var(--white);
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-add-to-cart:hover,
+.btn-buy-now:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.price {
+    padding-top: 0px;
+    margin-top: 0px;
+    text-align: center;
+    color: var(--grey);
+}
