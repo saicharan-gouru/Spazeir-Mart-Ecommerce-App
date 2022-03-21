@@ -13,8 +13,8 @@ function Categories(){
             <div className="categories">
             {
                 categoriesData.map(item => 
-                <Link to="/products" className="category-card">
-                    <img className="category-image" src={item.link} alt="category"/>
+                <Link to="/products" className="category-card" key={item._id}>
+                    <img className="category-image" src={item.imageLink} alt="category"/>
                     <p className="category-name">{item.categoryName}</p>
                 </Link>
                 )
