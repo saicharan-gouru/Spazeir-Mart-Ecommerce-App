@@ -1,7 +1,7 @@
 import { Route,Routes } from "react-router-dom";
 import "./App.css";
 import Mockman from "mockman-js";
-import {NavBar,Homepage,Footer} from "./index"
+import {NavBar,Homepage,Footer,ProductListing} from "./index";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="mock" element={<Mockman/>}/>
         <Route path="/" element={<Homepage/>} />
+        <Route path="/products" element={<ProductListing/>} />
       </Routes>
       <Footer/>
     </div>
