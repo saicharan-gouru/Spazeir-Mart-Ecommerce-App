@@ -6,6 +6,9 @@ function productsReducer(state, { type, payload }) {
             return {...state, products: payload }
         case "FETCH_CATEGORIES":
             return {...state, categories: payload }
+        case "INCLUDE_STAPLES":
+            return {...state, includeStaples: !state.includeStaples }
+
         default:
             return state
     }

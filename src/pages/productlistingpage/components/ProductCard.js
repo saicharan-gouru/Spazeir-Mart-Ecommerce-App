@@ -4,17 +4,17 @@ function ProductCard({product}){
 
     const {title,price,imageLink} = product;
     return(
-        <div class="product-card">
-            <div class="product-card-header">
-                <img class="hero-img " src={imageLink} alt="product" />
-                <div class="content ">
-                    <h2 class="hero-heading ">{title}</h2>
-                    <h4 class="price">{price} Rupees</h4>
+        <div className="product-card">
+            <div className="product-card-header">
+                <img className="hero-img " src={imageLink} alt="product" />
+                <div className="content ">
+                    <h2 className="hero-heading ">{title}</h2>
+                    <h4 className="price">{price} Rupees</h4>
                 </div>
             </div>
-            <div class="product-card-footer">
-                <button class="btn-add-to-cart">add to cart</button>
-                <button class="btn-buy-now">Buy now</button>
+            <div className="product-card-footer">
+                <button className="btn-add-to-cart">add to cart</button>
+                <button className="btn-buy-now">Buy now</button>
             </div>
         </div>
     );

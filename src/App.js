@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="mock" element={<Mockman/>}/>
+        <Route path="/mock" element={<Mockman/>}/>
         <Route path="/" element={<Homepage/>} />
         <Route path="/products" element={<ProductListing/>} />
       </Routes>
