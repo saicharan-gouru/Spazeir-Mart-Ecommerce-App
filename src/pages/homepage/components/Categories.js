@@ -8,7 +8,7 @@ function Categories(){
 
 
     return(
-        <div>
+        <div className="categories-container">
             <h1>Categories</h1>
             <div className="categories">
             {

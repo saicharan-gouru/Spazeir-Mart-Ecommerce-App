@@ -1,5 +1,34 @@
 .products-container {
+    background-color: var(--alice-blue);
+    grid-area: products;
+    padding: 1rem;
+}
+
+.product-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.products {
+    text-align: center;
+}
+
+.filters {
+    grid-area: filters;
+    height: 100vh;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+.filter-clear {
+    margin-left: 5rem;
+    color: var(--black);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 200px;
+    grid-template-areas: "filters products";
+    gap: 2rem;
 }
