@@ -15,7 +15,9 @@ function productsReducer(state, { type, payload }) {
         case "INCLUDE_VEGETABLES":
             return {...state, includeVegetables: !state.includeVegetables }
         case "CLEAR":
-            return {...state, sortByPrice: null, includeStaples: false, includeSnacks: false, includeDairyandEggs: false, includeVegetables: false }
+            return {...state, sortByPrice: null, includeStaples: false, includeSnacks: false, includeDairyandEggs: false, includeVegetables: false, rating: null }
+        case "RATING":
+            return {...state, rating: payload }
         default:
             return state
     }
