@@ -2,13 +2,13 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import { productsReducer } from "../reducers/productsReducer";
 import { sortProductsByPrice } from "../Filters/sortProductsByPrice";
-import { staplesFilter } from "../Filters/staplesFilter";
+import {categoryFilter} from "../Filters/categoryFilter"
 
 const ProductContext = createContext();
 
 function DataProvider({children}){
 
-    const [{products,categories,sortByPrice,includeStaples},productsDispatch] = useReducer(productsReducer,{ products:[],categories:[] ,sortByPrice : null, includeStaples : false });
+    const [{products,categories,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables},productsDispatch] = useReducer(productsReducer,{ products:[],categories:[] ,sortByPrice : null, includeStaples : false, includeSnacks : false,includeDairyandEggs : false, includeVegetables : false });
 
     useEffect(()=>{ 
         async function FetchData(){
@@ -27,11 +27,11 @@ function DataProvider({children}){
     );
 
 
-    const filter1 = staplesFilter(products,includeStaples); 
-    const sortedProducts = sortProductsByPrice(filter1,sortByPrice)  
+    const filter2 = categoryFilter(products,includeSnacks,includeStaples,includeDairyandEggs,includeVegetables)
+    const sortedProducts = sortProductsByPrice(filter2,sortByPrice)  
 
     return(
-    <ProductContext.Provider value={{categories,products,sortedProducts,productsDispatch,sortByPrice,includeStaples}}>
+    <ProductContext.Provider value={{categories,products,sortedProducts,productsDispatch,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables}}>
         {children}
     </ProductContext.Provider>
     );

@@ -1,3 +1,11 @@
+:root {
+    --primary-color: #2563EB;
+    --category-color: #60a5fa;
+    --gold: rgb(253, 196, 52);
+    --white: #ffff;
+    --black: rgba(0, 0, 0, 0.8);
+}
+
 .products-container {
     background-color: var(--alice-blue);
     grid-area: products;
@@ -22,8 +30,13 @@
 }
 
 .filter-clear {
-    margin-left: 5rem;
-    color: var(--black);
+    margin-left: 4rem;
+    border: 0px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .main {
