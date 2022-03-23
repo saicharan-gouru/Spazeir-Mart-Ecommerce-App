@@ -4,7 +4,7 @@ import {Link } from "react-router-dom";
 
 function Categories(){
 
-    const {categoriesData} = useData();
+    const {categories} = useData();
 
 
     return(
@@ -12,7 +12,7 @@ function Categories(){
             <h1>Categories</h1>
             <div className="categories">
             {
-                categoriesData.map(item => 
+                categories.map(item => 
                 <Link to="/products" className="category-card" key={item._id}>
                     <img className="category-image" src={item.imageLink} alt="category"/>
                     <p className="category-name">{item.categoryName}</p>

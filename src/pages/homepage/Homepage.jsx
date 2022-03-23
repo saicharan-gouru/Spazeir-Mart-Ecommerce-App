@@ -1,5 +1,5 @@
 import "./Homepage.css";
-import {Categories} from "../../index";
+import {Categories} from "../index";
 
 
 
