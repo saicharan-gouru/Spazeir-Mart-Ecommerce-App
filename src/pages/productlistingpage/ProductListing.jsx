@@ -1,15 +1,23 @@
-import {useData,ProductCard} from "../../index";
+import {useData} from "../../index";
+import {ProductCard,Filters} from "../index"
 import "./ProductListing.css";
+
+
 
 function ProductListing(){
 
-    const {productsData} = useData();
+    const {sortedProducts} = useData();
 
     return(
-        <div>
-            <h1>Products</h1>
+        <div className="main">
+            <Filters />
             <div className="products-container">
-                {productsData.map(product => <ProductCard product={product} key={product._id}/>)}
+                <div className="products">
+                    <h1>Products</h1>
+                    <div className="product-cards">
+                        {sortedProducts.map(product => <ProductCard product={product} key={product._id}/>)}
+                    </div>
+                </div>
             </div>
         </div>
     );
