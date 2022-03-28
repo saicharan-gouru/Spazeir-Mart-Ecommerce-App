@@ -48,3 +48,11 @@
     border: 2px solid var(--primary-color);
     outline: none;
 }
+
+.cart-badge {
+    position: absolute;
+    background-color: var(--gold);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+}

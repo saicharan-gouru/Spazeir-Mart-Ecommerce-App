@@ -1,7 +1,8 @@
 import "./ProductCard.css";
+import {useCart} from "../../../index";
 
 function ProductCard({product}){
-
+    const {cartDispatch} = useCart();
     const {title,price,imageLink} = product;
     return(
         <div className="product-card">
@@ -13,7 +14,7 @@ function ProductCard({product}){
                 </div>
             </div>
             <div className="product-card-footer">
-                <button className="btn-add-to-cart">add to cart</button>
+                <button className="btn-add-to-cart" onClick={()=>cartDispatch({type:"ADD_TO_CART"})}>add to cart</button>
                 <button className="btn-buy-now">Buy now</button>
             </div>
         </div>
