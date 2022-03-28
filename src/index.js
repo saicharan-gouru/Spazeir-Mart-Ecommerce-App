@@ -7,6 +7,7 @@ import {BrowserRouter} from "react-router-dom";
 import {NavBar} from "./components/NavBar/NavBar";
 import {DataProvider,useData} from "./contexts/product-context";
 import {Footer} from "./components/Footer/Footer";
+import {CartProvider,useCart} from "./contexts/cart-context"
 
 
 
@@ -17,11 +18,13 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <DataProvider>
+        <CartProvider>
           <App />
+        </CartProvider>
       </DataProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
 
-export { NavBar,useData,Footer };
+export { NavBar,useData,Footer,useCart };
