@@ -17,7 +17,7 @@ function CartProductCard({product}){
                             <h4 className="price">{price} Rupees</h4>
                             <div className="quantity-container">
                                 <label for="quantity">Quantity</label>
-                                <input id="quantity" type="number" min="1" />
+                                <input id="quantity" type="number" min="1" placeholder="1"/>
                             </div>
                             <button className="button" onClick={()=>cartDispatch({type:"REMOVE_FROM_CART",payload:product})}>Remove from cart</button>
                             <button className="button">Move to wishlist</button>
