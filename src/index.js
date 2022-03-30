@@ -4,10 +4,8 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import {BrowserRouter} from "react-router-dom";
-import {NavBar} from "./components/NavBar/NavBar";
-import {DataProvider,useData} from "./contexts/product-context";
-import {Footer} from "./components/Footer/Footer";
-import {CartProvider,useCart} from "./contexts/cart-context"
+import {DataProvider} from "./contexts";
+import {CartProvider} from "./contexts"
 
 
 
@@ -27,4 +25,3 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-export { NavBar,useData,Footer,useCart };

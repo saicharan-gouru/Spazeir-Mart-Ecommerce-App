@@ -1,6 +1,6 @@
 import "./Cartpage.css";
-import {useCart} from "../../index";
-import {CartProductCard} from "../index";
+import {useCart} from "../../contexts";
+import {CartProductCard} from "../index"; 
 import {Link} from "react-router-dom";
 
 function CartPage(){

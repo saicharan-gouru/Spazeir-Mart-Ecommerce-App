@@ -1,4 +1,4 @@
-import {useData} from "../../index";
+import {useData} from "../../contexts";
 import {ProductCard,Filters} from "../index"
 import "./ProductListing.css";
 

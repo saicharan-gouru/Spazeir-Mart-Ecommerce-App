@@ -1,5 +1,5 @@
 import "./CartProductCard.css";
-import {useCart} from "../../../index";
+import {useCart} from "../../../contexts";
 
 
 function CartProductCard({product}){
