@@ -30,13 +30,8 @@
 }
 
 .filter-clear {
-    margin-left: 4rem;
     border: 0px;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: var(--white);
     padding: 10px;
-    border-radius: 5px;
 }
 
 .main {

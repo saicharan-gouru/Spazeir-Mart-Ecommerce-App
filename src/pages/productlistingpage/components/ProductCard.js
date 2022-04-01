@@ -18,9 +18,9 @@ function ProductCard({product}){
             {
             itemsInCart.some(item => item._id === _id) && items_count>0  ?
             (<Link to="/cart"><button className="btn-go-to-cart">Go to cart</button></Link>):
-            (<button className="btn-add-to-cart" onClick={()=>cartDispatch({type:"ADD_TO_CART",payload:product})}>add to cart</button>)
+            (<button className="button primary-blue btn-add-to-cart" onClick={()=>cartDispatch({type:"ADD_TO_CART",payload:product})}>Add to cart</button>)
             }
-            <button className="btn-buy-now">Buy now</button>
+            <button className="button primary-blue btn-buy-now">Buy now</button>
             </div>
         </div>
     );

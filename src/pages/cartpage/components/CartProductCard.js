@@ -20,18 +20,18 @@ function CartProductCard({product}){
                             <div className="quantity-container">
 
                                 {product.quantity !== 0 ?
-                                (<button onClick={()=>cartDispatch({type:"INCREASE_PRODUCT_QUANTITY",payload:{item:product}})}>+</button>) : 
-                                (<button>+</button>)}
+                                (<button className="button primary-green btn-quantity" onClick={()=>cartDispatch({type:"INCREASE_PRODUCT_QUANTITY",payload:{item:product}})}>+</button>) : 
+                                (<button className="button primary-green btn-quantity">+</button>)}
 
                                 <label for="quantity">{product.quantity}</label>
 
                                 {product.quantity !== 1 ? 
-                                (<button onClick={()=>cartDispatch({type:"DECREASE_PRODUCT_QUANTITY",payload:{item:product}})}>-</button>) :
-                                (<button>-</button>)}
+                                (<button className="button primary-red btn-quantity" onClick={()=>cartDispatch({type:"DECREASE_PRODUCT_QUANTITY",payload:{item:product}})}>-</button>) :
+                                (<button className="button primary-red btn-quantity">-</button>)}
 
                             </div>
-                            <button className="button" onClick={()=>cartDispatch({type:"REMOVE_FROM_CART",payload:product})}>Remove from cart</button>
-                            <button className="button">Move to wishlist</button>
+                            <button className="button primary-blue" onClick={()=>cartDispatch({type:"REMOVE_FROM_CART",payload:product})}>Remove from cart</button>
+                            <button className="button primary-blue">Move to wishlist</button>
                         </div>
                     </div>
                 </div>
