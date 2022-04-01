@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import { productsReducer } from "../reducers/productsReducer";
+import { productsReducer } from "../reducers";
 import { sortProductsByPrice } from "../Filters/sortProductsByPrice";
 import {categoryFilter} from "../Filters/categoryFilter";
 import { ratingFilter } from "../Filters/ratingFilter";
