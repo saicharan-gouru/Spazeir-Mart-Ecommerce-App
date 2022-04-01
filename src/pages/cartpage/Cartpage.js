@@ -3,6 +3,7 @@ import {useCart} from "../../contexts";
 import {CartProductCard} from "../index"; 
 import {Link} from "react-router-dom";
 
+
 function CartPage(){
 
     const {itemsInCart,items_count,total_price,cartDispatch} = useCart();
@@ -10,7 +11,7 @@ function CartPage(){
     return(
         <div className="cart-container">
             <h1>My cart({items_count})</h1>
-            {items_count>0 && <button className="btn-clear-cart" onClick={()=>cartDispatch({type:"CLEAR_CART"})}>Clear cart</button>}
+            {items_count>0 && <button className="button primary-yellow btn-clear-cart" onClick={()=>cartDispatch({type:"CLEAR_CART"})}>Clear cart</button>}
             {items_count === 0 ? (<div className="default-cart-page"><h1 className="default-text">No items in cart...explore <Link to="/products"> products </Link></h1></div>) :
             (
             <div className="cart">

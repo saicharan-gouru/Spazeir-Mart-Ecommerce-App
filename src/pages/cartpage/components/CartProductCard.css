@@ -1,11 +1,6 @@
 :root {
     --white: white;
-    --black: black;
-    --hover-color: rgb(247, 242, 242);
     --grey: grey;
-    --gainsboro: gainsboro;
-    --primary-blue: #2563EB;
-    --gold: #fdc434;
 }
 
 .cart-product-card {
@@ -48,22 +43,6 @@
     color: var(--grey);
 }
 
-.button {
-    border-radius: 0.5rem;
-    border: 1px solid;
-    padding: 0.5rem;
-    margin: 5px;
-    background-color: var(--white);
-    color: black;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.button:hover {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
 .quantity-container {
     margin: 1rem;
 }
@@ -71,4 +50,13 @@
 #quantity {
     width: 30%;
     margin: 10px;
+}
+
+.button {
+    margin: 10px;
+}
+
+.btn-quantity {
+    margin: 10px;
+    padding: 10px;
 }
