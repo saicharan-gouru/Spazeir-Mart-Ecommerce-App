@@ -1,5 +1,5 @@
 import "./Categories.css";
-import {useData} from "../../../index";
+import {useData} from "../../../contexts";
 import {Link } from "react-router-dom";
 
 

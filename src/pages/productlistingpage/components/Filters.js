@@ -1,5 +1,5 @@
 import "../ProductListing.css";
-import {useData} from "../../../index";
+import {useData} from "../../../contexts";
 
 function Filters(){
 
