@@ -1,0 +1,29 @@
+:root {
+    --gold: #fdc434;
+}
+
+.wishlist-container {
+    text-align: center;
+}
+
+.default-wishlist-page {
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.default-text {
+    background-color: var(--gold);
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.wishlist-products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+}

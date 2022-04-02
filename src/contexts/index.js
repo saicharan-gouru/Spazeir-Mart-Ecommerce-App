@@ -1,4 +1,5 @@
 import { useCart, CartProvider } from "./cart-context";
 import { useData, DataProvider } from "./product-context";
+import { useWishlist, WishlistProvider } from "./wishlist-context";
 
-export { useCart, useData, CartProvider, DataProvider };
+export { useCart, useData, CartProvider, DataProvider, useWishlist, WishlistProvider };

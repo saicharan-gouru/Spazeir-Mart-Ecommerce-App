@@ -1,11 +1,13 @@
 import "./CartProductCard.css";
-import {useCart} from "../../../contexts";
+import {useCart,useWishlist} from "../../../contexts";
+import {Link} from "react-router-dom";
 
 
 function CartProductCard({product}){
 
-    const {title,price,imageLink} = product;
+    const {title,price,imageLink,_id} = product;
     const {cartDispatch} = useCart();
+    const {wishlistDispatch,itemsInWishlist} = useWishlist();
 
    
 
@@ -31,7 +33,11 @@ function CartProductCard({product}){
 
                             </div>
                             <button className="button primary-blue" onClick={()=>cartDispatch({type:"REMOVE_FROM_CART",payload:product})}>Remove from cart</button>
-                            <button className="button primary-blue">Move to wishlist</button>
+                            { 
+                            itemsInWishlist.some(item => item._id === _id) ? 
+                            <Link to="/wishlist"><button className="button primary-yellow">Go to wishlist</button></Link> :
+                            <button className="button primary-blue" onClick={()=>wishlistDispatch({type:"MOVE_TO_WISHLIST",payload:product})}>Move to wishlist</button>
+                            }
                         </div>
                     </div>
                 </div>
