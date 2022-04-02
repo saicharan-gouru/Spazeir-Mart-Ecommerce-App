@@ -49,7 +49,7 @@
     outline: none;
 }
 
-.cart-badge {
+.badge {
     position: absolute;
     background-color: var(--gold);
     font-weight: bold;

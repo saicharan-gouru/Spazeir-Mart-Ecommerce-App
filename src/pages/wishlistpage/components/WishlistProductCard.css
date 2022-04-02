@@ -1,0 +1,48 @@
+:root {
+    --white: white;
+    --grey: grey;
+}
+
+.wishlist-product-card {
+    max-width: 23rem;
+    margin: auto;
+    background-color: var(--white);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.wishlist-product-card .container1 {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.hero-img {
+    width: 5 rem;
+    height: 10rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-top: 0.5rem;
+}
+
+.hero-heading {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.price {
+    padding-top: 0px;
+    margin-top: 0px;
+    text-align: center;
+    color: var(--grey);
+}
+
+.button {
+    margin: 10px;
+}
