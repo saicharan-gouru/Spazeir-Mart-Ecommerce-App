@@ -1,0 +1,24 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+}
+
+.signup-container {
+    width: 350px;
+    padding: 2rem;
+    border: 2px solid var(--black);
+}
+
+.input {
+    width: 90%;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.btn-signup {
+    width: 100%;
+    margin: 2rem 0rem;
+}
