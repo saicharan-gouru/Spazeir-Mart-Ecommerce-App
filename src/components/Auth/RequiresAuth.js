@@ -3,11 +3,11 @@ import { Navigate, useLocation } from "react-router-dom";
 
 function RequiresAuth({children}){
 
-    const {isUserLoggedIn} = useAuth();
+    const {user} = useAuth();
     const location = useLocation();
 
     return(
-        isUserLoggedIn ? children : <Navigate  to="/login" state={{from:location}} replace />
+        user ? children : <Navigate  to="/login" state={{from:location}} replace />
     )
 }
 
