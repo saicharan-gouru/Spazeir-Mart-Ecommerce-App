@@ -33,10 +33,8 @@ export const signupHandler = function(schema, request) {
             createdAt: formatDate(),
             updatedAt: formatDate(),
             ...rest,
-            likes: [],
-            history: [],
-            playlists: [],
-            watchlater: [],
+            cart: [],
+            wishlist: []
         };
         const createdUser = schema.users.create(newUser);
         const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
@@ -59,7 +57,7 @@ export const signupHandler = function(schema, request) {
 export const loginHandler = function(schema, request) {
     const { email, password } = JSON.parse(request.requestBody);
 
-    console.log(email, password)
+
 
     try {
         const foundUser = schema.users.findBy({ email });
@@ -69,7 +67,7 @@ export const loginHandler = function(schema, request) {
             );
         }
 
-        console.log(foundUser)
+
 
         if (password === foundUser.password) {
             const encodedToken = sign({ _id: foundUser._id, email },
