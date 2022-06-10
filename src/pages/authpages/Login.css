@@ -26,3 +26,19 @@
     width: 100%;
     margin: 2rem 0rem;
 }
+
+.error-text {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.emoji {
+    margin-left: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.emoji:hover {
+    background-color: var(--primary-blue);
+}
