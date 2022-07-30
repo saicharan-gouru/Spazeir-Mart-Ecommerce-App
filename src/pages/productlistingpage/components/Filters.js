@@ -1,9 +1,9 @@
 import "../ProductListing.css";
 import {useData} from "../../../contexts";
 
-function Filters(){
 
-    const {sortByPrice,productsDispatch,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating} = useData();
+function Filters(){
+    const {sortByPrice,productsDispatch,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange} = useData();
     console.log(sortByPrice)
     return(
         <div className="filters">
@@ -21,7 +21,11 @@ function Filters(){
             <label for="rating-3"><input type="radio" name="rating" checked={rating === 4} onChange={ ()=> productsDispatch({type:"RATING",payload:4})}/>4 star</label><br/>
             <label for="rating-2"><input type="radio" name="rating" checked={rating === 3} onChange={ ()=> productsDispatch({type:"RATING",payload:3})}/>3 star</label><br/>
             <h5>Price </h5>
-            <input type="range" />
+            <input type="range" id="vol" name="vol" min="0" max="199" value={priceRange} onChange={(e)=>productsDispatch({type:"PRICE_RANGE",payload:e.target.value})} />
+            <div className="price-range-limits">
+                <p>0</p>
+                <p>{priceRange}</p>
+            </div>
         </div>
     )
 }

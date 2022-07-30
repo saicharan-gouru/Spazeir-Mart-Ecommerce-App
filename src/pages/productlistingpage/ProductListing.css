@@ -40,3 +40,16 @@
     grid-template-areas: "filters products";
     gap: 2rem;
 }
+
+.price-range-limits {
+    display: flex;
+    gap: 5rem;
+}
+
+.default-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    background-color: rgb(223, 128, 128);
+}
