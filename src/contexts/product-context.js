@@ -11,7 +11,7 @@ const ProductContext = createContext();
 
 function DataProvider({children}){
 
-    const [{products,categories,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange},productsDispatch] = useReducer(productsReducer,{ products:[],categories:[] ,sortByPrice : null, includeStaples : false, includeSnacks : false,includeDairyandEggs : false, includeVegetables : false,rating:null,priceRange:199 });
+    const [{products,categories,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange,searchedProducts},productsDispatch] = useReducer(productsReducer,{ products:[],categories:[] ,sortByPrice : null, includeStaples : false, includeSnacks : false,includeDairyandEggs : false, includeVegetables : false,rating:null,priceRange:199,searchedProducts:[] });
 
     useEffect(()=>{ 
         async function FetchData(){
@@ -36,7 +36,7 @@ function DataProvider({children}){
     const sortedProducts = sortProductsByPrice(priceRangeFilteredProducts,sortByPrice);  
 
     return(
-    <ProductContext.Provider value={{categories,products,sortedProducts,productsDispatch,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange}}>
+    <ProductContext.Provider value={{categories,products,sortedProducts,productsDispatch,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange,searchedProducts}}>
         {children}
     </ProductContext.Provider>
     );
