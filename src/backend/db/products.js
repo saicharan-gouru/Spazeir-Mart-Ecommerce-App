@@ -81,7 +81,7 @@ export const products = [{
         _id: uuid(),
         title: "Tomotoes(1 KG)",
         price: 29,
-        imageLink: "https://cdn.shopify.com/s/files/1/0257/4565/3811/products/early-girl-tomato.jpg?v=1642629960&width=352",
+        imageLink: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jagTo88a36RLTVUD2xiKEwHaHa%26pid%3DApi&f=1",
         categoryName: "Vegetables",
         rating: 5,
     },

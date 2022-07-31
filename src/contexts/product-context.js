@@ -4,12 +4,14 @@ import { productsReducer } from "../reducers";
 import { sortProductsByPrice } from "../Filters/sortProductsByPrice";
 import {categoryFilter} from "../Filters/categoryFilter";
 import { ratingFilter } from "../Filters/ratingFilter";
+import { priceRangeFilter } from "../Filters/priceRangeFilter";
+
  
 const ProductContext = createContext();
 
 function DataProvider({children}){
 
-    const [{products,categories,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating},productsDispatch] = useReducer(productsReducer,{ products:[],categories:[] ,sortByPrice : null, includeStaples : false, includeSnacks : false,includeDairyandEggs : false, includeVegetables : false,rating:null });
+    const [{products,categories,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange,searchedProducts},productsDispatch] = useReducer(productsReducer,{ products:[],categories:[] ,sortByPrice : null, includeStaples : false, includeSnacks : false,includeDairyandEggs : false, includeVegetables : false,rating:null,priceRange:199,searchedProducts:[] });
 
     useEffect(()=>{ 
         async function FetchData(){
@@ -30,10 +32,11 @@ function DataProvider({children}){
     
     const categoryFilteredProducts = categoryFilter(products,includeSnacks,includeStaples,includeDairyandEggs,includeVegetables);
     const ratingFilteredProducts = ratingFilter(categoryFilteredProducts,rating);
-    const sortedProducts = sortProductsByPrice(ratingFilteredProducts,sortByPrice);  
+    const priceRangeFilteredProducts = priceRangeFilter(ratingFilteredProducts,priceRange);
+    const sortedProducts = sortProductsByPrice(priceRangeFilteredProducts,sortByPrice);  
 
     return(
-    <ProductContext.Provider value={{categories,products,sortedProducts,productsDispatch,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating}}>
+    <ProductContext.Provider value={{categories,products,sortedProducts,productsDispatch,sortByPrice,includeStaples,includeSnacks,includeDairyandEggs,includeVegetables,rating,priceRange,searchedProducts}}>
         {children}
     </ProductContext.Provider>
     );

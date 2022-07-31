@@ -14,10 +14,14 @@ function productsReducer(state, { type, payload }) {
             return {...state, includeDairyandEggs: !state.includeDairyandEggs }
         case "INCLUDE_VEGETABLES":
             return {...state, includeVegetables: !state.includeVegetables }
+        case "PRICE_RANGE":
+            return {...state, priceRange: payload }
         case "CLEAR":
             return {...state, sortByPrice: null, includeStaples: false, includeSnacks: false, includeDairyandEggs: false, includeVegetables: false, rating: null }
         case "RATING":
             return {...state, rating: payload }
+        case "SEARCH":
+            return {...state, searchedProducts: state.products.filter(product => product.title.toLowerCase().indexOf(payload.toLowerCase()) !== -1) }
         default:
             return state
     }
