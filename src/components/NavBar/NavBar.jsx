@@ -4,7 +4,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {useData , useCart, useWishlist, useAuth} from "../../contexts"; 
 import {useState} from "react";
-import {ProductCard} from "../../pages/productlistingpage/components/ProductCard"
+import {ProductCard} from "../../pages/productlistingpage/components/ProductCard";
+import {triggerToast} from "../../services";
 
 function NavBar(){
 
@@ -19,6 +20,7 @@ function NavBar(){
     const logoutHandler = () => {
         localStorage.removeItem("token");
         setUser(null);
+        triggerToast("success","Logout successful")
         navigate("/");
       };
 

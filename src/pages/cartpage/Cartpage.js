@@ -43,7 +43,7 @@ function CartPage(){
                             <p>Rs.{total_price+30-50}</p>
                         </div>
                     </div>
-                    <button class="button primary-blue btn-placeorder">Place Order</button>
+                    <button class="button primary-blue btn-placeorder" onClick={()=>cartDispatch({type:"PLACE_ORDER"})}>Place Order</button>
                 </div>
             </div>
             </div>

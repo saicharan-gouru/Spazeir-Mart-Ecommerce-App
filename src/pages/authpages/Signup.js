@@ -3,6 +3,7 @@ import {useState} from "react";
 import {Link,useNavigate} from "react-router-dom";
 import {useAuth} from "../../contexts";
 import axios from "axios";
+import {triggerToast} from "../../services";
 
 function Signup(){
 
@@ -26,10 +27,12 @@ function Signup(){
             const {createdUser,encodedToken} = data;
             localStorage.setItem("token",encodedToken);
             setUser(createdUser);
+            triggerToast("success","Signup successful");
             navigate("/",{replace:true});
         }
         catch(error){
-            setError("Something went wrong..! It seems you already have an account or there might be some technical issue..!")
+            setError("Something went wrong..! It seems you already have an account or there might be some technical issue..!");
+            triggerToast("error","Signup failed")
         }
     }
 

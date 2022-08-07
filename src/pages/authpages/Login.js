@@ -3,6 +3,7 @@ import {useState} from "react";
 import {Link,useNavigate,useLocation} from "react-router-dom";
 import {useAuth} from "../../contexts";
 import axios from "axios";
+import {triggerToast} from "../../services";
 
 
 function Login(){
@@ -26,21 +27,21 @@ function Login(){
             const { data } = await axios.post("/api/auth/login", { email, password });
             const { foundUser, encodedToken } = data;
             setUser(foundUser);
+            triggerToast("success","Login Successful")
             localStorage.setItem("token", encodedToken);
             navigate(location.state?.from?.pathname || "/", { replace: true });
           } 
           catch (error) {
-            setError("Invalid username/password")
+            setError("Invalid username/password");
+            triggerToast("error","Login failed")
             console.error(error);
           }
     }
 
     const useTestCredentials = () => {
-     
-        setPassword("adarshBalika123");
-        setUserName("adarshbalika@gmail.com")
+        setPassword("saicharan123");
+        setUserName("saicharangouru@gmail.com");
     }
-
 
     return(
         <div>
