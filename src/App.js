@@ -3,6 +3,8 @@ import "./App.css";
 import Mockman from "mockman-js";
 import { Homepage,ProductListing,CartPage,Wishlistpage, Login, Signup} from "./pages";
 import {NavBar,Footer,RequiresAuth} from "./components";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -18,6 +20,18 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
+      <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          theme="colored"
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       <Footer/>
     </div>
   );

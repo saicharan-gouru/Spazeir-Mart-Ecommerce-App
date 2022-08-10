@@ -20,7 +20,6 @@ function ProductCard({product}){
             (<Link to="/cart"><button className="btn-go-to-cart">Go to cart</button></Link>):
             (<button className="button primary-blue btn-add-to-cart" onClick={()=>cartDispatch({type:"ADD_TO_CART",payload:product})}>Add to cart</button>)
             }
-            <button className="button primary-blue btn-buy-now">Buy now</button>
             </div>
         </div>
     );
