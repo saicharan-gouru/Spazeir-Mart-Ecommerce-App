@@ -17,7 +17,7 @@ function productsReducer(state, { type, payload }) {
         case "PRICE_RANGE":
             return {...state, priceRange: payload }
         case "CLEAR":
-            return {...state, sortByPrice: null, includeStaples: false, includeSnacks: false, includeDairyandEggs: false, includeVegetables: false, rating: null }
+            return {...state, sortByPrice: null, includeStaples: false, includeSnacks: false, includeDairyandEggs: false, includeVegetables: false, rating: null, priceRange: 199 }
         case "RATING":
             return {...state, rating: payload }
         case "SEARCH":

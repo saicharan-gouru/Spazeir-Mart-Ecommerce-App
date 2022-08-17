@@ -43,9 +43,9 @@ function NavBar(){
                             </div>
                     </div>
                 </div>
-                { !user ? <Link to="/login" className="nav-link hover-effect">Login/Signup</Link> : <button className="button primary-green nav-link hover-effect" onClick={logoutHandler} >Logout</button> }
                 <Link to="/cart" ><ShoppingCartIcon className="nav-link hover-effect" style={{ fontSize: "30px" }}></ShoppingCartIcon> <span className="badge"> {items_count} </span> </Link>
                 <Link to="/wishlist" ><FavoriteIcon className="nav-link hover-effect" style={{ fontSize: "30px" }}></FavoriteIcon> <span className="badge"> {wishlist_items_count} </span> </Link>
+                { !user ? <Link to="/login" className="nav-link hover-effect">Login/Signup</Link> : <button className="button primary-green nav-link hover-effect" onClick={logoutHandler} >Logout</button> }
             </nav>
         </div>
     );

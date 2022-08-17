@@ -1,10 +1,26 @@
 import "./ProductCard.css";
-import {useCart} from "../../../contexts";
-import {Link} from "react-router-dom";
+import {useCart,useAuth,useWishlist} from "../../../contexts";
+import {Link,useNavigate} from "react-router-dom";
 
 function ProductCard({product}){
     const {cartDispatch,itemsInCart,items_count} = useCart();
-    const {title,price,imageLink,_id} = product;
+    const {user} = useAuth();
+    const navigate = useNavigate();
+    const {title,price,imageLink,_id,rating} = product;
+    const {itemsInWishlist,wishlist_items_count,wishlistDispatch} = useWishlist();
+
+    const addToCartHandler = () => {
+        user ?
+        cartDispatch({type:"ADD_TO_CART",payload:product}) :
+        navigate("/login")
+    }
+
+    const addToWishlistHandler = () => {
+        user ?
+        wishlistDispatch({type:"MOVE_TO_WISHLIST",payload:product}) :
+        navigate("/login")
+    }
+
     return(
         <div className="product-card">
             <div className="product-card-header">
@@ -12,13 +28,20 @@ function ProductCard({product}){
                 <div className="content ">
                     <h2 className="hero-heading ">{title}</h2>
                     <h4 className="price">{price} Rupees</h4>
+                    
                 </div>
             </div>
             <div className="product-card-footer">
+            <h4 className="rating">{rating}⭐</h4>
             {
             itemsInCart.some(item => item._id === _id) && items_count>0  ?
-            (<Link to="/cart"><button className="btn-go-to-cart">Go to cart</button></Link>):
-            (<button className="button primary-blue btn-add-to-cart" onClick={()=>cartDispatch({type:"ADD_TO_CART",payload:product})}>Add to cart</button>)
+            (<Link to="/cart"><button className="button primary-yellow btn-go-to-cart">Go to cart</button></Link>):
+            (<button className="button primary-blue btn-add-to-cart" onClick={addToCartHandler}>Add to cart</button>)
+            }
+            {
+            itemsInWishlist.some(item => item._id === _id) && wishlist_items_count>0  ?
+            (<Link to="/wishlist"><button className="button primary-yellow btn-go-to-cart">Go to wishlist</button></Link>):
+            (<button className="button primary-blue btn-add-to-cart" onClick={addToWishlistHandler}>Add to wishlist</button>)
             }
             </div>
         </div>
