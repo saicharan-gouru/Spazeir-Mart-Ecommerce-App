@@ -1,6 +1,8 @@
 import "./ProductCard.css";
 import {useCart,useAuth,useWishlist} from "../../../contexts";
 import {Link,useNavigate} from "react-router-dom";
+import { AiOutlineHeart,AiFillHeart } from 'react-icons/ai';
+
 
 function ProductCard({product}){
     const {cartDispatch,itemsInCart,items_count} = useCart();
@@ -28,7 +30,6 @@ function ProductCard({product}){
                 <div className="content ">
                     <h2 className="hero-heading ">{title}</h2>
                     <h4 className="price">{price} Rupees</h4>
-                    
                 </div>
             </div>
             <div className="product-card-footer">
@@ -40,9 +41,10 @@ function ProductCard({product}){
             }
             {
             itemsInWishlist.some(item => item._id === _id) && wishlist_items_count>0  ?
-            (<Link to="/wishlist"><button className="button primary-yellow btn-go-to-cart">Go to wishlist</button></Link>):
-            (<button className="button primary-blue btn-add-to-cart" onClick={addToWishlistHandler}>Add to wishlist</button>)
+            (<AiFillHeart className="wishlist-icon" onClick={() => wishlistDispatch({type:"REMOVE_FROM_WISHLIST",payload:product})}></AiFillHeart>):
+            (<AiOutlineHeart className="wishlist-icon"  onClick={addToWishlistHandler}></AiOutlineHeart>)
             }
+            
             </div>
         </div>
     );

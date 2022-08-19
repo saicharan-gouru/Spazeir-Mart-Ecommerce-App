@@ -59,3 +59,9 @@
     text-align: center;
     color: var(--grey);
 }
+
+.wishlist-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: red;
+}
