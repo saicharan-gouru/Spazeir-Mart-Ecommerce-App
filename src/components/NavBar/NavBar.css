@@ -11,12 +11,10 @@
 }
 
 .hero-header {
-    max-width: 70%;
-    margin: auto;
     display: flex;
     align-items: center;
     color: var(--primary-color);
-    gap: 5rem;
+    justify-content: space-around;
 }
 
 .hero-brand-name {
@@ -46,6 +44,7 @@
     border-radius: 5px;
     border: 2px solid var(--primary-color);
     outline: none;
+    width: 100%;
 }
 
 .badge {
@@ -87,6 +86,8 @@
 
 .search {
     display: flex;
+    justify-content: space-between;
+    width: 20%;
     gap: 10px;
 }
 

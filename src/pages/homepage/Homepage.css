@@ -5,3 +5,15 @@
 .homepage {
     text-align: center;
 }
+
+.hero-container {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text {
+    font-size: 2rem;
+}

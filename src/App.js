@@ -5,11 +5,13 @@ import { Homepage,ProductListing,CartPage,Wishlistpage, Login, Signup} from "./p
 import {NavBar,Footer,RequiresAuth} from "./components";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {ScrollToTop} from "./components";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <ScrollToTop>
       <Routes>
         <Route path="/mock" element={<Mockman/>}/>
         <Route path="/" element={<Homepage/>} />
@@ -20,6 +22,7 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
+      </ScrollToTop>
       <ToastContainer
           position="top-right"
           autoClose={3000}

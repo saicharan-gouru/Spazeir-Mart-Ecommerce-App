@@ -47,20 +47,10 @@
 }
 
 .btn-add-to-cart,
-.btn-buy-now {
+.btn-buy-now,
+.btn-go-to-cart {
     padding: 10px;
     cursor: pointer;
-}
-
-.btn-go-to-cart {
-    border-radius: 0.5rem;
-    border: 1px solid white;
-    padding: 0.5rem;
-    color: var(--primary-blue);
-    cursor: pointer;
-    font-size: 1rem;
-    background-color: var(--gold);
-    font-weight: bold;
 }
 
 .price {
@@ -68,4 +58,10 @@
     margin-top: 0px;
     text-align: center;
     color: var(--grey);
+}
+
+.wishlist-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    color: red;
 }
